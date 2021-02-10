@@ -1,12 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "de.aelpecyem.rotater.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "RenderTileTinyPotatoMixin",
+    "RenderTileTinyPotatoAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -11,11 +11,41 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+	maven {
+		name = "Modmuss"
+		url = "https://maven.modmuss50.me/"
+	}
+	maven {
+		name = "Jared"
+		url = "https://maven.blamejared.com/"
+	}
+	maven {
+		url = "https://maven.theillusivec4.top/"
+	}
+	maven {
+		name = "Ladysnake Libs"
+		url = 'https://dl.bintray.com/ladysnake/libs'
+	}
+	maven {
+		name "storagedrawers"
+		url = "https://dl.bintray.com/jaquadro/dev/"
+	}
+	maven {
+		name = "BuildCraft"
+		url = "https://mod-buildcraft.com/maven"
+	}
+	maven {
+		name = "entity reach"
+		url = "https://maven.jamieswhiteshirt.com/libs-release/"
+	}
+	maven {
+		name = "Botania"
+		url = "https://jitpack.io"
+	}
+
+	maven {
+		url "https://maven.siphalor.de" // for nbt crafting
+	}
 }
 
 dependencies {
@@ -26,6 +56,23 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modCompile "alexiil.mc.lib:libblockattributes-all:${project.libblockattributes_version}"
+
+	modImplementation "me.zeroeightsix:fiber:${project.fiber_version}"
+	include "me.zeroeightsix:fiber:${project.fiber_version}"
+	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
+
+	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cardinal_components_version}"
+	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-block:${project.cardinal_components_version}"
+	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:${project.cardinal_components_version}"
+	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-util:${project.cardinal_components_version}"
+	modImplementation "top.theillusivec4.curios:curios-fabric:${project.curios_version}"
+	modImplementation "com.jamieswhiteshirt:reach-entity-attributes:${project.reach_entity_attributes_version}"
+	include "com.jamieswhiteshirt:reach-entity-attributes:${project.reach_entity_attributes_version}"
+	modImplementation "de.siphalor:nbtcrafting-1.16:2+"
+
+	modImplementation "vazkii.botania:Botania:${project.botania_version}"
+
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
